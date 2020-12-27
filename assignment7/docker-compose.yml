@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  web:
+    image: drupal
+    ports:
+      - 8080:80
+    volumes:
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_PASSWORD: password
